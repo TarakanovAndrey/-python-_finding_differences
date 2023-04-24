@@ -1,13 +1,19 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Comparison of the original and the modified document in json or yml format and output of differences."
 authors = ["Andrey_Tarakanov <andrey.t-krd@yandex.ru>"]
+license = "free"
 readme = "README.md"
-packages = [{include = "hexlet_code"}]
+packages = [{include = "gendiff"}]
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+flake8 = "^6.0.0"
+pytest = "^7.3.1"
 
 
 [build-system]
