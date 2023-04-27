@@ -1,5 +1,4 @@
 import json
-import yaml
 from yaml.loader import SafeLoader
 import os
 
