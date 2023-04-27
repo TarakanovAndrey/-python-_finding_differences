@@ -1,9 +1,7 @@
-# {
-#   - follow: false
-#     host: hexlet.io
-#   - proxy: 123.234.53.22
-#   - timeout: 50
-#   + timeout: 20
-#   + verbose: true
-# }
+import pytest
 
+
+@pytest.fixture()
+def data():
+    output = '{\n  - follow: False\n    host: hexlet.io\n  - proxy: 123.234.53.22\n  - timeout: 50\n  + timeout: 20\n  + verbose: True\n}'
+    return output
