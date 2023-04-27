@@ -3,11 +3,11 @@ from gendiff import generate_diff
 
 
 
-result = generate_diff('fixtures/file1.json', 'fixtures/file2.json')
+result = generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json')
 
 @pytest.fixture()
 def data():
-    sample = open('fixtures/flat_resalt.txt')
+    sample = open('tests/fixtures/flat_resalt.txt')
     output = sample.read()
     return output
 
