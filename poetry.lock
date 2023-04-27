@@ -144,6 +144,30 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "ruamel-appconfig"
+version = "0.5.5"
+description = "create and read configuration dir/file, set argparse (sub)parser defaults from config"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ruamel.appconfig-0.5.5-py2.py3-none-any.whl", hash = "sha256:fc0183c6748c07c5d838f046a5b18be07fb7a1bcf5a7410b6fbd2fa619ab2c29"},
+    {file = "ruamel.appconfig-0.5.5.tar.gz", hash = "sha256:4faefed5ba577c16e4af6c00deb20a92a92d4e60088608a7ba83f8760540b13f"},
+]
+
+[[package]]
+name = "ruamel-std-argparse"
+version = "0.8.3"
+description = "Enhancements to argparse: extra actions, subparser aliases, smart formatter, a decorator based wrapper"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ruamel.std.argparse-0.8.3-py2.py3-none-any.whl", hash = "sha256:130b5f7e98ef7dcf6b5a1106d238b01e04a141ce5c284415d6defe1f30d8c920"},
+    {file = "ruamel.std.argparse-0.8.3.tar.gz", hash = "sha256:d167c9f1a32fe779703e543b2811cfa44257d72d6174cd8cf8cafb2ccd233b6b"},
+]
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -155,7 +179,22 @@ files = [
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 
+[[package]]
+name = "yaml-1-3"
+version = "0.1.0"
+description = "next YAML parser"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "yaml_1.3-0.1.0-py3-none-any.whl", hash = "sha256:d67c90d65e7e04fac9106dd3533bb82cc043b5ea21768385ced9e1176c90d8fc"},
+]
+
+[package.dependencies]
+"ruamel.appconfig" = "*"
+"ruamel.std.argparse" = ">=0.8"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1e78a0bdcdec69166032e23fb19112c28cb5a026c7b0b7e256898a2285a72482"
+content-hash = "bd265f45830ef179f0f030bfc7a26b80bab6bb6f9e2d5e8cd464a5e98d994caa"
