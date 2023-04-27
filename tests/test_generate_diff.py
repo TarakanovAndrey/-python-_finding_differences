@@ -2,6 +2,7 @@ import pytest
 from gendiff import generate_diff
 
 
+
 result = generate_diff('fixtures/file1.json', 'fixtures/file2.json')
 
 @pytest.fixture()
