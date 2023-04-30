@@ -1,20 +1,25 @@
-from gendiff.extract_data import extract_data_from_file
+from gendiff.auxiliary.extract_data import extract_data_from_file
+from gendiff.auxiliary.get_diff import get_diff
+from gendiff.formatting.get_nested_format import get_nested_format_for_output
+from gendiff.formatting.get_plain_format import get_plain
+from gendiff.formatting.get_json_format import get_json_format_for_output
+from gendiff.formatting.get_json_description import get_json_description
+from gendiff.formatting.get_yml_description import get_yml_description
 
 
-def generate_diff(first_file_path, second_file_path):
-    file_1, file_2 = extract_data_from_file(first_file_path, second_file_path)
-
-    keys = sorted(file_1.keys() | file_2.keys())
-    result = '{\n'
-    for key in keys:
-        if key not in file_1:
-            result += f'  + {key}: {file_2[key]}\n'
-        elif key not in file_2:
-            result += f'  - {key}: {file_1[key]}\n'
-        elif file_1[key] == file_2[key]:
-            result += f'    {key}: {file_1[key]}\n'
-        elif file_1[key] != file_2[key]:
-            result += f'  - {key}: {file_1[key]}\n'
-            result += f'  + {key}: {file_2[key]}\n'
-
-    return result + '}'
+def generate_diff(path_file1, path_file2, format_style='stylish'):
+    data_file1, data_file2, extension = extract_data_from_file(path_file1, path_file2)
+    diff = get_diff(data_file1, data_file2)
+    output_plain = get_plain(diff)
+    output_nested = get_nested_format_for_output(diff)
+    match format_style:
+        case 'plain' if extension == '.json':
+            return get_json_description(output_plain)
+        case 'plain' if extension == '.yml':
+            return get_yml_description(output_plain)
+        case 'json':
+            return get_json_format_for_output(diff)
+        case _ if extension == '.json':
+            return get_json_description(output_nested)
+        case _ if extension == '.yml':
+            return get_yml_description(output_nested)
