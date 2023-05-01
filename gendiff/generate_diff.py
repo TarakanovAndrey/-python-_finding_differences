@@ -12,11 +12,11 @@ def generate_diff(path_file1, path_file2, format_style='stylish'):
     match format_style:
         case 'plain':
             output_plain = get_plain(diff)
-            # return get_description_value(output_plain)
-            return output_plain
+            return get_description_value(output_plain)
+            # return output_plain
         case 'json':
             return get_json_format_for_output(diff)
         case _:
             output_nested = get_nested_format_for_output(diff)
-            # return get_description_value(output_nested)
-            return output_nested
+            return get_description_value(output_nested)
+            # return output_nested
