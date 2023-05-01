@@ -1,9 +1,9 @@
 import re
 
-description = {"True": 'true', "False": 'false', 'None': '~', ': \n': ':\n'}
+description = {"True": 'true', "False": 'false', 'None': 'null', ': \n': ':\n'}
 
 
-def get_yml_description(output):
+def get_description_value(output):
     for key in description:
         if key in output:
             output = re.sub(key, description[key], output)
