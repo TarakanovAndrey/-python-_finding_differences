@@ -1,5 +1,6 @@
 import itertools
 import copy
+from gendiff.formatting.get_description_value import get_description_value
 
 
 def prepared_data(items_original):
@@ -87,4 +88,4 @@ def get_nested_format_for_output(items):
     for d in list_dicts[1:]:
         merge_dicts(combined_dict, d)
     nested_format = get_nested_format(combined_dict)
-    return nested_format
+    return get_description_value(nested_format)

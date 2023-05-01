@@ -1,3 +1,6 @@
+from gendiff.formatting.get_description_value import get_description_value
+
+
 def get_plain(output):
     result = []
     for item in output:
@@ -8,22 +11,12 @@ def get_plain(output):
             case 'deleted':
                 result.append(f"Property '{path}' was removed")
             case 'added':
-                # descriptions = {'True': 'True', 'False': 'False', 'None': 'None'}
                 if isinstance(value, dict):
                     value = str('[complex value]')
-                # elif str(value) in descriptions:
-                #     value = descriptions[str(value)]
-                # else:
-                #     value = f"'{value}'"
                 result.append(f"Property '{path}' was added with value: {value}")
             case 'changed':
                 value_before = value['before_changes']
                 value_after = value['after_changes']
-                # descriptions = {'True': 'True', 'False': 'False', 'None': 'None'}
-                # if str(value_before) in descriptions:
-                #     value_before = descriptions[str(value_before)]
-                # if str(value_after) in descriptions:
-                #     value_after = descriptions[str(value_after)]
                 if isinstance(value_before and value_after, dict):
                     value_before = str('[complex value]')
                     value_after = str('[complex value]')
@@ -37,4 +30,5 @@ def get_plain(output):
                     value_before = f"'{value_before}'"
                     value_after = f"'{value_after}'"
                 result.append(f"Property '{path}' was updated. From {value_before} to {value_after}")
-    return '\n'.join(result)
+    join_result = '\n'.join(result)
+    return get_description_value(join_result)
