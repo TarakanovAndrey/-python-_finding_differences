@@ -1,6 +1,6 @@
 import re
 
-description = {"True": 'true', "False": 'false', 'None': 'null', ': \n': ':\n'}
+description = {"True": 'true', "False": 'false', 'None': 'null', ': \n': ':\n', '': 'null'}
 
 
 def get_description_value(output):
