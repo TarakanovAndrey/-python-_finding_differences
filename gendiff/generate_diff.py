@@ -3,7 +3,6 @@ from gendiff.auxiliary.get_diff import get_diff
 from gendiff.formatting.get_nested_format import get_nested_format_for_output
 from gendiff.formatting.get_plain_format import get_plain
 from gendiff.formatting.get_json_format import get_json_format_for_output
-from gendiff.formatting.get_description_value import get_description_value
 
 
 def generate_diff(path_file1, path_file2, format_style='stylish'):

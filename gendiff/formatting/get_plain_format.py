@@ -17,7 +17,7 @@ def get_plain(output):
             case 'changed':
                 value_before = value['before_changes']
                 value_after = value['after_changes']
-                if isinstance(value_before and value_after, dict):
+                if isinstance(value_before, dict) and isinstance(value_after, dict):
                     value_before = str('[complex value]')
                     value_after = str('[complex value]')
                 elif isinstance(value_before, dict) and not isinstance(value_after, dict):
