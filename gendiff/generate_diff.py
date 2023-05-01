@@ -6,33 +6,17 @@ from gendiff.formatting.get_json_format import get_json_format_for_output
 from gendiff.formatting.get_description_value import get_description_value
 
 
-# def generate_diff(path_file1, path_file2, format_style='stylish'):
-#     data_file1, data_file2, extension = extract_data_from_file(path_file1, path_file2)
-#     diff = get_diff(data_file1, data_file2)
-#     output_plain = get_plain(diff)
-#     output_nested = get_nested_format_for_output(diff)
-#     match format_style:
-#         case 'plain' if extension == '.json':
-#             return get_json_description(output_plain)
-#         case 'plain' if extension == '.yml':
-#             return get_yml_description(output_plain)
-#         case 'json':
-#             return get_json_format_for_output(diff)
-#         case _ if extension == '.json':
-#             return get_json_description(output_nested)
-#         case _ if extension == '.yml':
-#             return get_yml_description(output_nested)
-
-
 def generate_diff(path_file1, path_file2, format_style='stylish'):
     data_file1, data_file2 = extract_data_from_file(path_file1, path_file2)
     diff = get_diff(data_file1, data_file2)
-    output_plain = get_plain(diff)
-    output_nested = get_nested_format_for_output(diff)
     match format_style:
         case 'plain':
-            return get_description_value(output_plain)
+            output_plain = get_plain(diff)
+            # return get_description_value(output_plain)
+            return output_plain
         case 'json':
             return get_json_format_for_output(diff)
         case _:
-            return get_description_value(output_nested)
+            output_nested = get_nested_format_for_output(diff)
+            # return get_description_value(output_nested)
+            return output_nested
