@@ -144,7 +144,7 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
-name = "yaml"
+name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
 category = "main"
