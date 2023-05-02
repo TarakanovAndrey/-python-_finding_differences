@@ -33,9 +33,6 @@ def get_action_changed(path, value):
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
 
 
-print(get_action_changed('df.df', {'before_changes': True, 'after_changes': {1: 5}}))
-
-
 def get_action_added(path, value):
     if isinstance(value, dict):
         value = '[complex value]'
