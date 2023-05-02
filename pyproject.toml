@@ -14,7 +14,6 @@ gendiff = "gendiff.scripts.gendiff:main"
 python = "^3.10"
 flake8 = "^5.0.4"
 pytest = "^7.3.1"
-pyyaml = {path = "dist/PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl"}
 yaml = {path = "dist/PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl"}
 
 
