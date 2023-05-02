@@ -33,7 +33,7 @@ def get_action_changed(path, value):
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
 
 
-print(get_action_changed('df.df', {'before_changes': '', 'after_changes': 0}))
+# print(get_action_changed('df.df', {'before_changes': '', 'after_changes': 0}))
 
 
 def get_action_added(path, value):
