@@ -170,7 +170,22 @@ files = [
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 
+[[package]]
+name = "yaml"
+version = "6.0"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:a9b8d3e6c58a833c69e0c3fc13f2c2f517ef87e52227ad09a0281749f9dcaf31"},
+]
+
+[package.source]
+type = "file"
+url = "dist/PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7f99e748fcf392205f2a0bbe28f47678bcf449a1d3b97b6cb60d660bfd468eb7"
+content-hash = "ec4a7d6f12608298657ae894f11ba6dd90755d3bae887069c6dcc484b252d985"
