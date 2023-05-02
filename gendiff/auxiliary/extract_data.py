@@ -1,5 +1,5 @@
 import json
-import yaml
+from yaml import load
 from yaml.loader import SafeLoader
 import os
 
@@ -13,6 +13,6 @@ def extract_data_from_file(first_file_path, second_file_path):
         data_file_2 = json.load(open(second_file_path))
         return data_file_1, data_file_2
     elif file_extension_1 in ['.yml', '.yaml'] and file_extension_2 in ['.yml', '.yaml']:
-        data_file_1 = yaml.load(open(first_file_path), Loader=SafeLoader)
-        data_file_2 = yaml.load(open(second_file_path), Loader=SafeLoader)
+        data_file_1 = load(open(first_file_path), Loader=SafeLoader)
+        data_file_2 = load(open(second_file_path), Loader=SafeLoader)
         return data_file_1, data_file_2
