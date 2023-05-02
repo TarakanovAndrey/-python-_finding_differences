@@ -22,7 +22,8 @@ jobs:
         run: |
           pip install poetry
           make install
-          poetry add PyYAML
+      - name: Install pyyaml
+          poetry add PyYAML@latest
       - name: Run linter and pytest
         run: |
           make lint
