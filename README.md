@@ -3,10 +3,7 @@
 
 [![Python CI](https://github.com/TarakanovAndrey/python-project-50/actions/workflows/tarakanov-check.yml/badge.svg)](https://github.com/TarakanovAndrey/python-project-50/actions/workflows/tarakanov-check.yml)  
 
-[![asciicast](https://asciinema.org/a/vF8hqUTmeIzFBR7iamowhLv1S.svg)](https://asciinema.org/a/vF8hqUTmeIzFBR7iamowhLv1S)  
+<a href="https://codeclimate.com/github/TarakanovAndrey/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/16787555bd5efca240e9/maintainability" /></a>  
 
-[![asciicast](https://asciinema.org/a/5pnEkpTmUT1idNoBqQg44nCo9.svg)](https://asciinema.org/a/5pnEkpTmUT1idNoBqQg44nCo9)  
+[![Test Coverage](https://api.codeclimate.com/v1/badges/16787555bd5efca240e9/test_coverage)](https://codeclimate.com/github/TarakanovAndrey/python-project-50/test_coverage)  
 
-Примечание:  
-1. Парсинг файлов с расширением '.yml', '.yaml' временно реализован через json, так как github action модуль yaml не распознает.  
-2. Проверка покрытия тестами через сс не подключена, так как репозиторий временно не загружается в сс.  
