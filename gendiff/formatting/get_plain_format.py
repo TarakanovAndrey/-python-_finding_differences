@@ -26,6 +26,8 @@ def get_action_changed(path, value):
         case False, False, False, False:
             value_before = f"'{value_before}'"
             value_after = f"'{value_after}'"
+        case False, False, True, False:
+            value_after = f"'{value_after}'"
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
 
 
