@@ -6,8 +6,8 @@ def get_action_changed(path, value):
     value_after = value['after_changes']
     is_dict_before = isinstance(value_before, dict)
     is_dict_after = isinstance(value_after, dict)
-    is_spec_type_before = value_before in [False, True, None] and isinstance(value_before, int)
-    is_spec_type_after = value_after in [False, True, None] and isinstance(value_before, int)
+    is_spec_type_before = value_before in [False, True, None] or isinstance(value_before, int)
+    is_spec_type_after = value_after in [False, True, None] or isinstance(value_before, int)
 
     match is_dict_before, is_dict_after, is_spec_type_before, is_spec_type_after:
         case True, True, False, False:
@@ -29,6 +29,9 @@ def get_action_changed(path, value):
         case False, False, True, False:
             value_after = f"'{value_after}'"
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
+
+
+# print(get_action_changed('df.df', {'before_changes': None, 'after_changes': ' '}))
 
 
 def get_action_added(path, value):
