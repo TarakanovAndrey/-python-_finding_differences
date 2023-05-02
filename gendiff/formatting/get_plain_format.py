@@ -28,10 +28,12 @@ def get_action_changed(path, value):
             value_after = f"'{value_after}'"
         case False, False, True, False:
             value_after = f"'{value_after}'"
+        case False, False, False, True:
+            value_before = f"'{value_before}'"
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
 
 
-# print(get_action_changed('df.df', {'before_changes': None, 'after_changes': ' '}))
+print(get_action_changed('df.df', {'before_changes': '', 'after_changes': 0}))
 
 
 def get_action_added(path, value):
