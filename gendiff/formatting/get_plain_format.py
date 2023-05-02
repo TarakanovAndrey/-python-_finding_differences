@@ -4,14 +4,12 @@ from gendiff.formatting.get_description_value import get_description_value
 def get_action_changed(path, value):
     value_before = value['before_changes']
     value_after = value['after_changes']
-    is_dict_before = isinstance(value_before, dict)
-    is_dict_after = isinstance(value_after, dict)
-    # is_spec_type_before = value_before in [False, True, None] or isinstance(value_before, int)
-    is_spec_type_before = isinstance(value_before, (bool, int, type(None)))
-    # is_spec_type_after = value_after in [False, True, None] or isinstance(value_after, int)
-    is_spec_type_after = isinstance(value_after, (bool, int, type(None)))
+    value_before_is_dict = isinstance(value_before, dict)
+    value_after_is_dict = isinstance(value_after, dict)
+    is_type_before_value = isinstance(value_before, (bool, int, type(None)))
+    is_type_after_value = isinstance(value_after, (bool, int, type(None)))
 
-    match is_dict_before, is_dict_after, is_spec_type_before, is_spec_type_after:
+    match value_before_is_dict, value_after_is_dict, is_type_before_value, is_type_after_value:
         case True, True, False, False:
             value_before = '[complex value]'
             value_after = '[complex value]'
