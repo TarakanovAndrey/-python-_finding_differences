@@ -1,6 +1,4 @@
-import pytest
 from gendiff import generate_diff
-import os
 
 
 def test_generate_diff_flat_json_to_stylish():
