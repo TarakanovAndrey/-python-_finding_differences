@@ -6,8 +6,10 @@ def get_action_changed(path, value):
     value_after = value['after_changes']
     is_dict_before = isinstance(value_before, dict)
     is_dict_after = isinstance(value_after, dict)
-    is_spec_type_before = value_before in [False, True, None] or isinstance(value_before, int)
-    is_spec_type_after = value_after in [False, True, None] or isinstance(value_after, int)
+    # is_spec_type_before = value_before in [False, True, None] or isinstance(value_before, int)
+    is_spec_type_before = isinstance(value_before, (bool, int, type(None)))
+    # is_spec_type_after = value_after in [False, True, None] or isinstance(value_after, int)
+    is_spec_type_after = isinstance(value_after, (bool, int, type(None)))
 
     match is_dict_before, is_dict_after, is_spec_type_before, is_spec_type_after:
         case True, True, False, False:
