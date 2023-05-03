@@ -10,9 +10,9 @@ def get_action_changed(path, value):
     is_type_after_value = isinstance(value_after, (bool, int, type(None)))
 
     match value_before_is_dict, value_after_is_dict, is_type_before_value, is_type_after_value:
-        case True, True, False, False:
-            value_before = '[complex value]'
-            value_after = '[complex value]'
+        # case True, True, False, False:
+        #     value_before = '[complex value]'
+        #     value_after = '[complex value]'
         case True, False, False, False:
             value_before = '[complex value]'
             value_after = f"'{value_after}'"
