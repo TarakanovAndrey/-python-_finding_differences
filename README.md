@@ -11,3 +11,8 @@
 
 [![asciicast](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D.svg)](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D)  
 
+Сравнение двух плоских файлов в формате '.yml', '.yaml'  
+
+[![asciicast](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg.svg)](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg)  
+
+
