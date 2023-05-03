@@ -15,4 +15,6 @@
 
 [![asciicast](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg.svg)](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg)  
 
+Сравнение двух файлов с вложенной структурой в форматах '.json', '.yml', '.yaml'  
 
+[![asciicast](https://asciinema.org/a/7kUlTgQpqZADGP1QWF0AAHDGF.svg)](https://asciinema.org/a/7kUlTgQpqZADGP1QWF0AAHDGF)  
