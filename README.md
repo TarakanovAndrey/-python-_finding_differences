@@ -7,3 +7,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/16787555bd5efca240e9/test_coverage)](https://codeclimate.com/github/TarakanovAndrey/python-project-50/test_coverage)  
 
+Сравнение двух плоских файлов в формате '.json'  
+
+[![asciicast](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D.svg)](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D)  
+
