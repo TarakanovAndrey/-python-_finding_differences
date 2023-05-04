@@ -6,7 +6,8 @@ from gendiff.formatting.get_json_format import get_json_format_for_output
 
 
 def generate_diff(path_file1, path_file2, format_style='stylish'):
-    data_file1, data_file2 = extract_data_from_file(path_file1, path_file2)
+    data_file1 = extract_data_from_file(path_file1)
+    data_file2 = extract_data_from_file(path_file2)
     diff = get_diff(data_file1, data_file2)
     match format_style:
         case 'plain':
