@@ -1,32 +1,17 @@
 from gendiff.formatting.get_description_value import get_description_value
 
 
-def get_action_changed(path, value):
-    value_before = value['before_changes']
-    value_after = value['after_changes']
-    value_before_is_dict = isinstance(value_before, dict)
-    value_after_is_dict = isinstance(value_after, dict)
-    is_type_before_value = isinstance(value_before, (bool, int, type(None)))
-    is_type_after_value = isinstance(value_after, (bool, int, type(None)))
+def get_right_value_format(value):
+    if isinstance(value, dict):
+        return '[complex value]'
+    elif not isinstance(value, (bool, int, type(None))):
+        return f"'{value}'"
+    return value
 
-    match value_before_is_dict, value_after_is_dict, is_type_before_value, is_type_after_value:
-        case True, False, False, False:  # ok
-            value_before = '[complex value]'
-            value_after = f"'{value_after}'"
-        case True, False, False, True:
-            value_before = '[complex value]'
-        case False, True, False, False:
-            value_before = f"'{value_before}'"
-            value_after = '[complex value]'
-        case False, True, True, False:
-            value_after = '[complex value]'
-        case False, False, False, False:  # ok
-            value_before = f"'{value_before}'"
-            value_after = f"'{value_after}'"
-        case False, False, True, False:
-            value_after = f"'{value_after}'"
-        case False, False, False, True:
-            value_before = f"'{value_before}'"
+
+def get_action_changed(path, value):
+    value_before = get_right_value_format(value['before_changes'])
+    value_after = get_right_value_format(value['after_changes'])
     return f"Property '{path}' was updated. From {value_before} to {value_after}"
 
 
