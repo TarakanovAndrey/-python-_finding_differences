@@ -4,15 +4,15 @@ import pytest
 
 @pytest.fixture()
 def path_json_files():
-    path_file1 = 'gendiff/files/file1_nested.json'
-    path_file2 = 'gendiff/files/file2_nested.json'
+    path_file1 = 'tests/files/file1_nested.json'
+    path_file2 = 'tests/files/file2_nested.json'
     return path_file1, path_file2
 
 
 @pytest.fixture()
 def path_yml_files():
-    path_file1 = 'gendiff/files/file1_nested.yml'
-    path_file2 = 'gendiff/files/file2_nested.yaml'
+    path_file1 = 'tests/files/file1_nested.yml'
+    path_file2 = 'tests/files/file2_nested.yaml'
     return path_file1, path_file2
 
 

@@ -18,7 +18,7 @@ def get_action_changed(path, value):
 def get_action_added(path, value):
     if isinstance(value, dict):
         value = '[complex value]'
-    elif value not in [False, True, None] and not isinstance(value, int):
+    elif not isinstance(value, (bool, int, type(None))):
         value = f"'{value}'"
     return f"Property '{path}' was added with value: {value}"
 
