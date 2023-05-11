@@ -16,11 +16,8 @@ def get_action_changed(path, value):
 
 
 def get_action_added(path, value):
-    if isinstance(value, dict):
-        value = '[complex value]'
-    elif not isinstance(value, (bool, int, type(None))):
-        value = f"'{value}'"
-    return f"Property '{path}' was added with value: {value}"
+    need_value = get_right_value_format(value)
+    return f"Property '{path}' was added with value: {need_value}"
 
 
 def get_action_deleted(path):
