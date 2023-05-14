@@ -48,7 +48,6 @@ def get_nested_format_for_output(value):
 
 
 def get_stylish(diff):
-    root_children = diff['children']
-    dict_diff = get_stylish_format(root_children)
+    dict_diff = get_stylish_format(diff)
     stylish_format = get_nested_format_for_output(dict_diff)
     return get_description_value(stylish_format)

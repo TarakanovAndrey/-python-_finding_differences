@@ -25,7 +25,6 @@ def get_action_deleted(path):
 
 
 def get_plain(diff, storage=None):
-
     if storage is None:
         storage = {'path': [], 'result': []}
     for dict_ in diff:
