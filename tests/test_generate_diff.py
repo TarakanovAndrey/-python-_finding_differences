@@ -44,3 +44,11 @@ def test_generate_diff_nested_json_to_plain(path_json_files, sample_plain_format
 
 def test_generate_diff_nested_yml_to_plain(path_yml_files, sample_plain_format):
     assert generate_diff(*path_yml_files, 'plain') == sample_plain_format
+
+
+def test_generate_diff_nested_json_to_json(path_json_files):
+    assert isinstance(generate_diff(*path_json_files, 'json'), str)
+
+
+def test_generate_diff_nested_yaml_to_json(path_yml_files):
+    assert isinstance(generate_diff(*path_yml_files, 'json'), str)
