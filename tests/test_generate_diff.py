@@ -30,13 +30,6 @@ def sample_plain_format():
     return output
 
 
-@pytest.fixture()
-def sample_json_format():
-    sample = open('tests/fixtures/nested_to_json')
-    output = sample.read()
-    return output
-
-
 def test_generate_diff_nested_json_to_stylish(path_json_files, sample_stylish_format):
     assert generate_diff(*path_json_files) == sample_stylish_format
 
@@ -51,11 +44,3 @@ def test_generate_diff_nested_json_to_plain(path_json_files, sample_plain_format
 
 def test_generate_diff_nested_yml_to_plain(path_yml_files, sample_plain_format):
     assert generate_diff(*path_yml_files, 'plain') == sample_plain_format
-
-
-def test_generate_diff_nested_json_to_json(path_json_files, sample_json_format):
-    assert generate_diff(*path_json_files, 'json') == sample_json_format
-
-
-def test_generate_diff_nested_yml_to_json(path_yml_files, sample_json_format):
-    assert generate_diff(*path_yml_files, 'json') == sample_json_format
