@@ -4,7 +4,7 @@ from yaml.loader import SafeLoader
 import os
 
 
-def extract_data_from_file(file_path):
+def extract_data_from_file(file_path: str) -> dict:
     filename, file_extension = os.path.splitext(file_path)
 
     if file_extension == '.json':

@@ -2,7 +2,7 @@ import itertools
 from gendiff.formatting.get_description_value import get_description_value
 
 
-def get_stylish_format(diff, result=None):
+def added_action(diff, result=None):
     if result is None:
         result = dict()
     for dict_ in diff:
@@ -11,7 +11,7 @@ def get_stylish_format(diff, result=None):
         match feature:
             case 'nested':
                 result[key] = {}
-                get_stylish_format(dict_['children'], result[key])
+                added_action(dict_['children'], result[key])
             case 'added':
                 result.update({f"+ {key}": dict_['value']})
             case 'changed':
@@ -24,7 +24,7 @@ def get_stylish_format(diff, result=None):
     return result
 
 
-def get_nested_format_for_output(value):
+def added_indent(value):
 
     def iter_(current_value, depth):
         if not isinstance(current_value, dict):
@@ -47,7 +47,7 @@ def get_nested_format_for_output(value):
     return iter_(value, 0)
 
 
-def get_stylish(diff):
-    dict_diff = get_stylish_format(diff)
-    stylish_format = get_nested_format_for_output(dict_diff)
+def get_stylish_format(diff):
+    dict_diff = added_action(diff)
+    stylish_format = added_indent(dict_diff)
     return get_description_value(stylish_format)

@@ -9,22 +9,22 @@ def get_right_value_format(value):
     return value
 
 
-def get_action_changed(path, value):
+def get_action_changed(path: list, value):
     value_before = get_right_value_format(value['before'])
     value_after = get_right_value_format(value['after'])
     return f"Property '{'.'.join(path)}' was updated. From {value_before} to {value_after}"
 
 
-def get_action_added(path, value):
+def get_action_added(path: list, value):
     need_value = get_right_value_format(value)
     return f"Property '{'.'.join(path)}' was added with value: {need_value}"
 
 
-def get_action_deleted(path):
+def get_action_deleted(path: list):
     return f"Property '{'.'.join(path)}' was removed"
 
 
-def get_plain(diff, storage=None):
+def get_plain(diff: dict, storage=None):
     if storage is None:
         storage = {'path': [], 'result': []}
     for dict_ in diff:

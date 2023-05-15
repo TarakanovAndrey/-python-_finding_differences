@@ -1,6 +1,6 @@
-def get_diff(dict1, dict2, diff=None):
+def get_diff(dict1: dict, dict2: dict, diff=None):
     if diff is None:
-        diff = {'type': 'root', 'children': []}
+        diff: dict = {'type': 'root', 'children': []}
     keys = sorted(dict1.keys() | dict2.keys())
     for key in keys:
         match key in dict1, key in dict2:
