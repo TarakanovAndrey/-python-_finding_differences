@@ -1,6 +1,3 @@
-import copy
-
-
 DESCRIPTION = {'True': 'true', 'False': 'false', 'None': 'null'}
 
 
@@ -24,28 +21,25 @@ def get_plain(diff, path=None, lines=None, depth=0):
             lines = map(lambda child: get_plain(child, path, lines, depth + 1), diff['children'])
         case 'nested':
             path.append(diff['key'])
-            path_copy = copy.deepcopy(path)
+            path_copy = path.copy()
             lines = map(lambda child: get_plain(child, path_copy, lines, depth + 1), diff['children'])
         case 'added':
             path.append(diff['key'])
-            path_copy = copy.deepcopy(path)
-            path.pop()
             value = get_right_value(diff['value'])
-            result = f"Property '{'.'.join(path_copy)}' was added with value: {value}"
+            result = f"Property '{'.'.join(path.copy())}' was added with value: {value}"
+            path.pop()
             return result
         case 'deleted':
             path.append(diff['key'])
-            path_copy = copy.deepcopy(path)
+            result = f"Property '{'.'.join(path.copy())}' was removed"
             path.pop()
-            result = f"Property '{'.'.join(path_copy)}' was removed"
             return result
         case 'changed':
             path.append(diff['key'])
-            path_copy = copy.deepcopy(path)
-            path.pop()
             value_1 = get_right_value(diff['value']['before'])
             value_2 = get_right_value(diff['value']['after'])
-            result = f"Property '{'.'.join(path_copy)}' was updated. From {value_1} to {value_2}"
+            result = f"Property '{'.'.join(path.copy())}' was updated. From {value_1} to {value_2}"
+            path.pop()
             return result
 
     if depth == 1 or depth > 1 and diff['type'] == 'nested':
