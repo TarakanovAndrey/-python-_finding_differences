@@ -8,6 +8,8 @@ def get_right_value(value):
     else:
         if str(value) in description.keys():
             return description[str(value)]
+        elif isinstance(value, (int, float)):
+            return str(value)
         else:
             return f"'{value}'"
 
