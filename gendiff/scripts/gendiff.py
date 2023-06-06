@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-
 from gendiff import generate_diff
 from gendiff.auxiliary.get_argumets import get_arguments
 

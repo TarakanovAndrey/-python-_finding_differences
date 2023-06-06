@@ -32,22 +32,14 @@ pip install git+https://github.com/TarakanovAndrey/python-project-50.git
 
 ## Примеры работы программы с разными форматами и генерация отчетов в форматах stylish, plain text, json.  
 
-### Сравнение двух плоских файлов в формате '.json'  
+### Сравнение двух файлов с вложенной структурой в форматах '.json', '.yml', '.yaml'  и вывод в формате stylish
 
-[![asciicast](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D.svg)](https://asciinema.org/a/XGd8a8OQ9crni2Ky6SE2vxh6D)  
-
-### Сравнение двух плоских файлов в формате '.yml', '.yaml'  
-
-[![asciicast](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg.svg)](https://asciinema.org/a/lkXGwtCEjuoQpyZjoY5Jgxjyg)  
-
-### Сравнение двух файлов с вложенной структурой в форматах '.json', '.yml', '.yaml'  
-
-[![asciicast](https://asciinema.org/a/7kUlTgQpqZADGP1QWF0AAHDGF.svg)](https://asciinema.org/a/7kUlTgQpqZADGP1QWF0AAHDGF)  
+[![asciicast](https://asciinema.org/a/2k0wgInditYLlcYpbdPfJtjtl.svg)](https://asciinema.org/a/2k0wgInditYLlcYpbdPfJtjtl)  
 
 ### Сравнение двух файлов с вложенной структурой в форматах '.json', '.yml', '.yaml' и вывод в формате plain  
 
-[![asciicast](https://asciinema.org/a/a2yvELdxFr5hd9YNLqW7cM8Hv.svg)](https://asciinema.org/a/a2yvELdxFr5hd9YNLqW7cM8Hv)  
+[![asciicast](https://asciinema.org/a/w0ZDHRSD2kTpy92nSZZ3mmX3O.svg)](https://asciinema.org/a/w0ZDHRSD2kTpy92nSZZ3mmX3O)  
 
 ### Сравнение двух файлов с вложенной структурой в форматах '.json', '.yml', '.yaml' и вывод в формате json  
 
-[![asciicast](https://asciinema.org/a/x4rTSrft0iG5R9g5vIc6vbmm4.svg)](https://asciinema.org/a/x4rTSrft0iG5R9g5vIc6vbmm4)
+[![asciicast](https://asciinema.org/a/HzBUygmCB5ToMkSqs2u0ZrlKd.svg)](https://asciinema.org/a/HzBUygmCB5ToMkSqs2u0ZrlKd)
