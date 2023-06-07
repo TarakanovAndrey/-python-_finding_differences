@@ -5,7 +5,7 @@ from gendiff.auxiliary.get_argumets import get_arguments
 
 def main():
     arguments = get_arguments()
-    # print(generate_diff(*arguments))
+    print(generate_diff(*arguments))
 
 
 if __name__ == '__main__':
