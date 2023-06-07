@@ -1,13 +1,8 @@
-import json
-from yaml import load
-from yaml.loader import SafeLoader
-import os
+from gendiff.auxiliary.get_format import get_format
+from gendiff.auxiliary.get_data import get_data
 
 
 def extract_data_from_file(file_path: str) -> dict:
-    filename, file_extension = os.path.splitext(file_path)
-
-    if file_extension == '.json':
-        return json.load(open(file_path))
-    elif file_extension in ['.yml', '.yaml']:
-        return load(open(file_path), Loader=SafeLoader)
+    file_format = get_format(file_path)
+    data = get_data(file_format, file_path)
+    return data
